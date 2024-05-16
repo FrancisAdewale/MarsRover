@@ -31,5 +31,10 @@ public class InputParser {
         return plateau;
     }
 
+    public static Direction parseDirection(String input) {
+        Direction direction = Direction.valueOf(input);
+        return direction;
+    }
+
 
 }

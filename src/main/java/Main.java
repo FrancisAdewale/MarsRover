@@ -13,20 +13,15 @@ public class Main {
         String grid = scanner.nextLine();
         var plateau = InputParser.parsePlateauSize(grid);
 
-
         System.out.println("Where do you want to land: ");
         String landingPosition = scanner.nextLine();
         var position = InputParser.parsePosition(landingPosition);
 
-
-
+        plateau.getPlateauSize()[position.getX() - 1][position.getY()- 1] = "R:" + position.getFacing();
+        plateau.printPlateau();
 
         System.out.println("What are your instructions: ");
         String instructions = scanner.nextLine();
-
-
-        plateau.getPlateauSize()[position.getX() - 1][position.getY()- 1] = "R:" + position.getFacing();
-        plateau.printPlateau();
 
 
 
