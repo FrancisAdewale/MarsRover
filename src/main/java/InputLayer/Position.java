@@ -44,4 +44,40 @@ public class Position {
                 ", facing=" + facing +
                 '}';
     }
+
+    public void rotateLeft() {
+        switch (facing) {
+            case N:
+                facing = Direction.W;
+                break;
+            case E:
+                facing = Direction.N;
+                break;
+            case S:
+                facing = Direction.E;
+                break;
+            case W:
+                facing = Direction.S;
+                break;
+        }
+
+
+    }
+
+    public void rotateRight() {
+        switch (facing) {
+            case N:
+                facing = Direction.E;
+                break;
+            case E:
+                facing = Direction.S;
+                break;
+            case S:
+                facing = Direction.W;
+                break;
+            case W:
+                facing = Direction.N;
+                break;
+        }
+    }
 }

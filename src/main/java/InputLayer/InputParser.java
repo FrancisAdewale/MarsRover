@@ -9,6 +9,8 @@ public class InputParser {
 
     public static Position parsePosition(String input) {
 
+
+
         String[] splitLandingPosition = input.split(" ");
         String x = splitLandingPosition[0];
         String y = splitLandingPosition[1];

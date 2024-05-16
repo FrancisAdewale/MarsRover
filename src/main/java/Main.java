@@ -13,13 +13,14 @@ public class Main {
         System.out.println("Enter width and height: ");
         String grid = scanner.nextLine();
         var plateau = InputParser.parsePlateauSize(grid);
+        plateau.addValuesToPlateau();
+
 
         System.out.println("Where do you want to land: ");
         String landingPosition = scanner.nextLine();
         var position = InputParser.parsePosition(landingPosition);
 
-        plateau.getPlateauSize()[position.getX() - 1][position.getY()- 1] = "R:" + position.getFacing();
-        plateau.printPlateau();
+        plateau.getPlateauSize()[position.getY() - 1][position.getX()-1] = "R:" + position.getFacing();
 
         System.out.println("What are your instructions: ");
         String instructions = scanner.nextLine();
