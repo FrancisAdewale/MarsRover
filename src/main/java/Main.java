@@ -15,14 +15,7 @@ public class Main {
         PlateauSize plateau = new PlateauSize();
         plateau.setPlateauSize(new String[Integer.valueOf(width)][Integer.valueOf(height)]);
 
-
-        for (int r = 0; r< plateau.getPlateauSize().length;r++){
-            for (int c = 0; c <plateau.getPlateauSize().length;c++){
-                plateau.getPlateauSize()[r][c] = "?";  // Initialize the cell
-                System.out.print("[" +plateau.getPlateauSize()[r][c] + "]"); // Display the content of cell board
-            }
-            System.out.println();  // go to next line
-        }
+        plateau.printPlateau();
 
 
 
