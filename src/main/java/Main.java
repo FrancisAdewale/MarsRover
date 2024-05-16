@@ -1,4 +1,5 @@
 import InputLayer.*;
+import LogicLayer.Rover;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +25,9 @@ public class Main {
         String instructions = scanner.nextLine();
         var instructionList = InputParser.parseInstruction(instructions);
 
+        Rover rover = new Rover(position,instructionList,plateau);
 
+        rover.traverse();
 
 
 
