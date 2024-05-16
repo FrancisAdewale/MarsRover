@@ -5,6 +5,8 @@ import java.util.List;
 
 public class InputParser {
 
+
+
     public static Position parsePosition(String input) {
 
         String[] splitLandingPosition = input.split(" ");
