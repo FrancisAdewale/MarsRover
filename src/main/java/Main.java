@@ -22,6 +22,7 @@ public class Main {
 
         System.out.println("What are your instructions: ");
         String instructions = scanner.nextLine();
+        List<Instruction> instructionList = InputParser.parseInstruction(instructions);
 
 
 

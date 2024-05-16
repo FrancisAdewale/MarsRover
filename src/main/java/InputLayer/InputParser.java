@@ -1,5 +1,8 @@
 package InputLayer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class InputParser {
 
     public static Position parsePosition(String input) {
@@ -31,10 +34,17 @@ public class InputParser {
         return plateau;
     }
 
-    public static Direction parseDirection(String input) {
-        Direction direction = Direction.valueOf(input);
-        return direction;
+    public static List<Instruction> parseInstruction(String input) {
+        String[] splitInstructions = input.split("");
+        List<Instruction> instructionList = new ArrayList<>(List.of());
+        for(String i : splitInstructions) {
+            instructionList.add(Instruction.valueOf(i));
+        }
+        System.out.println(instructionList);
+        return instructionList;
     }
+    
+    
 
 
 }
