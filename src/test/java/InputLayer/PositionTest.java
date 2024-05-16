@@ -11,7 +11,8 @@ public class PositionTest {
         Position pos = new Position(2,4,Direction.N);
 
         assertAll(
-                () -> assertEquals(2, pos.getX())
+                () -> assertEquals(2, pos.getX()),
+                () -> assertEquals(4, pos.getY())
         );
 
 

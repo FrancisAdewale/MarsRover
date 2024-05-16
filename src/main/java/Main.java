@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        System.out.println("Enter upper-right coordinates: ");
+        System.out.println("Enter width and height: ");
         Scanner scanner = new Scanner(System.in);
         String grid = scanner.nextLine();
 
