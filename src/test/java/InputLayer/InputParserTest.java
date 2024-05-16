@@ -2,6 +2,9 @@ package InputLayer;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class InputParserTest {
@@ -30,5 +33,20 @@ class InputParserTest {
 
     @Test
     void parseInstruction() {
+        String input = "LMLMLMLMLMLMLM";
+        List<Instruction> expected = new ArrayList<>(List.of(
+                Instruction.L,Instruction.M,Instruction.L,Instruction.M,
+                Instruction.L,Instruction.M,Instruction.L,Instruction.M,
+                Instruction.L,Instruction.M,Instruction.L,Instruction.M,
+                Instruction.L,Instruction.M
+                ));
+
+        List<Instruction> actual = InputParser.parseInstruction(input);
+        assertEquals(expected, actual);
+
+
+
+
+
     }
 }
