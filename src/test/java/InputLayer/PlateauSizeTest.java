@@ -11,10 +11,8 @@ class PlateauSizeTest {
 
         PlateauSize plateauSize = new PlateauSize();
         //Arrange
-
         plateauSize.setPlateauSize(new String[5][5]);
         //Act
-
         //Assert
         assertAll(
                 () -> assertArrayEquals(new String[5][5], plateauSize.getPlateauSize()),
