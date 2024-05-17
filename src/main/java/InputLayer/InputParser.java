@@ -9,7 +9,7 @@ public class InputParser {
 
     public static Position parsePosition(String input) {
 
-
+//validation
 
         String[] splitLandingPosition = input.split(" ");
         String x = splitLandingPosition[0];
@@ -30,6 +30,8 @@ public class InputParser {
     }
 
     public static Plateau parsePlateauSize(String input) {
+
+        //validation
         String[] splitGrid = input.split(" ");
         String width = splitGrid[0];
         String height = splitGrid[1];
@@ -39,6 +41,8 @@ public class InputParser {
     }
 
     public static List<Instruction> parseInstruction(String input) {
+
+        //validation
         String[] splitInstructions = input.split("");
         List<Instruction> instructionList = new ArrayList<>(List.of());
         for(String i : splitInstructions) {
