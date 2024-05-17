@@ -26,6 +26,16 @@ class RoverTest {
 
     @Test
     void roverRotatesLeft() {
+        Plateau plateau = InputParser.parsePlateauSize("5 5");
+
+        Direction facing = Direction.N;
+        Position startingPos = new Position(2,4, facing);
+        List<Instruction> instructions = List.of(Instruction.L);
+
+        Rover rover = new Rover(startingPos,instructions,plateau);
+        rover.traverse();
+        assertEquals(Direction.W, startingPos.getFacing());
+
 
     }
 }
