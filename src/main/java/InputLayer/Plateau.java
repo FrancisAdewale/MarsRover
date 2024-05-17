@@ -1,12 +1,10 @@
 package InputLayer;
 
-import java.util.Arrays;
-
-public class PlateauSize {
+public class Plateau {
 
     private String[][] plateauSize;
 
-    public PlateauSize() {
+    public Plateau() {
 
     }
 

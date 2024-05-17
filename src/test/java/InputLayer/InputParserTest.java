@@ -23,10 +23,10 @@ class InputParserTest {
     @Test
     void parsePlateauSize() {
 
-        PlateauSize expected = new PlateauSize();
+        Plateau expected = new Plateau();
         String input = "5 5";
         expected.setPlateauSize(new String[5][5]);
-        PlateauSize actual =  InputParser.parsePlateauSize(input);
+        Plateau actual =  InputParser.parsePlateauSize(input);
         assertEquals(expected.getPlateauSize().length, actual.getPlateauSize().length);
 
     }

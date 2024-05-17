@@ -29,11 +29,11 @@ public class InputParser {
         return position;
     }
 
-    public static PlateauSize parsePlateauSize(String input) {
+    public static Plateau parsePlateauSize(String input) {
         String[] splitGrid = input.split(" ");
         String width = splitGrid[0];
         String height = splitGrid[1];
-        PlateauSize plateau = new PlateauSize();
+        Plateau plateau = new Plateau();
         plateau.setPlateauSize(new String[Integer.valueOf(width)][Integer.valueOf(height)]);
         return plateau;
     }

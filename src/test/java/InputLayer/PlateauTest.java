@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PlateauSizeTest {
+class PlateauTest {
 
     @Test
     void setPlaeauSize() {
 
-        PlateauSize plateauSize = new PlateauSize();
+        Plateau plateauSize = new Plateau();
         //Arrange
         plateauSize.setPlateauSize(new String[5][5]);
         //Act
