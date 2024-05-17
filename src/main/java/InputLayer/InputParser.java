@@ -44,7 +44,7 @@ public class InputParser {
         for(String i : splitInstructions) {
             instructionList.add(Instruction.valueOf(i));
         }
-        System.out.println(instructionList);
+        //System.out.println(instructionList);
         return instructionList;
     }
     

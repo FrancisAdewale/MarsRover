@@ -13,7 +13,6 @@ public class Rover {
     private List<Instruction> instructionList;
     private Position finalPosition;
     private PlateauSize plateau;
-    private Direction facing;
 
 
     public Rover(Position startingPosition, List<Instruction> instructionList, PlateauSize plateau) {
@@ -32,9 +31,9 @@ public class Rover {
     }
 
     public void traverse() {
-        System.out.println("Starting Position: " + this.startingPosition.toString());
+        //System.out.println("Starting Position: " + this.startingPosition.toString());
 
-        plateau.printCurrentPlateauGrid();
+        //plateau.printCurrentPlateauGrid();
 
         for (Instruction i : instructionList) {
 
@@ -48,109 +47,40 @@ public class Rover {
                 // Move forward
                 int newX = startingPosition.getX();
                 int newY = startingPosition.getY();
+                int maxX = plateau.getPlateauSize()[0].length;
+                int maxY = plateau.getPlateauSize().length;
                 switch (startingPosition.getFacing()) {
                     case N:
-                        newY += 1;
-                        startingPosition.setY(newY);
-                        plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
+                        newY = (newY + 1) % maxY; //3 mod 5 = 3 4 mod 5 = 4 5 mod 5 = 0 which loops it over
+                       // startingPosition.setY(newY);
+                       // plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
                         break;
                     case E:
-                        newX +=1;
-                        startingPosition.setX(newX);
-                        plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
+                        newX = (newX + 1) % maxX;
+                       // startingPosition.setX(newX);
+                        //plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
                         break;
                     case S:
-                        newY -= 1;
-                        startingPosition.setY(newY);
-                        plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
+                        newY = (newY - 1 + maxY) % maxY;
+                       // startingPosition.setY(newY);
+                        //plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
                         break;
                     case W:
-                        newX -=1;
-                        startingPosition.setX(newX);
-                        plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
+                        newX = (newX - 1 + maxX) % maxX;
+                        //startingPosition.setX(newX);
+                        //plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
                         break;
                 }
 
-
-//            if(startingPosition.getFacing().name().equalsIgnoreCase("n")) {
-//
-//                if(i.name().equalsIgnoreCase("L")){
-//                    startingPosition.setFacing(Direction.W);
-//                } else if(i.name().equalsIgnoreCase("R")) {
-//                    startingPosition.setFacing(Direction.E);
-//                } else {
-//                    int newX = startingPosition.getX() + 1;
-//                    if (newX < plateau.getPlateauSize().length) {
-//                        startingPosition.setX(newX);
-//                    }
-//                    startingPosition.setX(newX);
-//                    plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
-//                }
-//
-//            }  else if(startingPosition.getFacing().name().equalsIgnoreCase("e")) {
-//                if(i.name().equalsIgnoreCase("L")){
-//                    startingPosition.setFacing(Direction.N);
-//                } else if(i.name().equalsIgnoreCase("R")) {
-//                    startingPosition.setFacing(Direction.S);
-//                } else {
-//                    int newY = startingPosition.getY() + 1;
-//                    if (newY < plateau.getPlateauSize().length) {
-//                        startingPosition.setY(newY);
-//                    }
-//
-//                    plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
-//                }
-//
-//            } else if(startingPosition.getFacing().name().equalsIgnoreCase("s")) {
-//                if(i.name().equalsIgnoreCase("L")) {
-//                    startingPosition.setFacing(Direction.E);
-//                } else if (i.name().equalsIgnoreCase("R")) {
-//                    startingPosition.setFacing(Direction.W);
-//                } else {
-//                    int newX = startingPosition.getX();
-//                    int newY = startingPosition.getY();
-//                    switch (startingPosition.getFacing()) {
-//                        case N:
-//                            newY++;
-//                            break;
-//                        case E:
-//                            newX++;
-//                            break;
-//                        case S:
-//                            newY--;
-//                            break;
-//                        case W:
-//                            newX--;
-//                            break;
-//                    }
-//                    plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
-//                }
-//
-//            } else {
-//                if(i.name().equalsIgnoreCase("L")) {
-//                    startingPosition.setFacing(Direction.S);
-//                } else if (i.name().equalsIgnoreCase("R")) {
-//                    startingPosition.setFacing(Direction.N);
-//                } else {
-//                    int newY = startingPosition.getY() + 1;
-//                    if (newY < plateau.getPlateauSize().length) { // Check if within bounds
-//                        startingPosition.setY(newY);
-//                    }
-//                    plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
-//                }
-//
-                plateau.printCurrentPlateauGrid();
-//                System.out.println();
-//
-                finalPosition = startingPosition;
-                System.out.println("Final Position: " + finalPosition.toString());
-//            }
-
+                startingPosition.setX(newX);
+                startingPosition.setY(newY);
+                //plateau.getPlateauSize()[newY][newX] = "/";
+                //plateau.printCurrentPlateauGrid();
             }
 
-
-
         }
+        finalPosition = startingPosition;
+        System.out.println(finalPosition.getX() + " " + finalPosition.getY() + " " + finalPosition.getFacing());
     }
 
 
