@@ -24,4 +24,8 @@ class RoverTest {
 
     }
 
+    @Test
+    void roverRotatesLeft() {
 
+    }
+}
