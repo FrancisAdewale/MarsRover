@@ -37,37 +37,27 @@ public class Rover {
         for (Instruction i : instructionList) {
 
             if (i == Instruction.L) {
-                // Rotate left
                 startingPosition.rotateLeft();
             } else if (i == Instruction.R) {
-                // Rotate right
                 startingPosition.rotateRight();
             } else {
-                // Move forward
                 int newX = startingPosition.getX();
                 int newY = startingPosition.getY();
-                int maxX = plateau.getPlateauSize()[0].length;
-                int maxY = plateau.getPlateauSize().length;
+                int maxX = plateau.getPlateauSize()[0].length; //X AXIS LENGTH
+                int maxY = plateau.getPlateauSize().length; //Y AXIS LENGTH
                 switch (startingPosition.getFacing()) {
                     case N:
-                        newY = (newY + 1) % maxY; //3 mod 5 = 3 4 mod 5 = 4 5 mod 5 = 0 which loops it over
-                       // startingPosition.setY(newY);
-                       // plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
+                        newY = (newY + 1) % maxY;
                         break;
                     case E:
                         newX = (newX + 1) % maxX;
-                       // startingPosition.setX(newX);
-                        //plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
+
                         break;
                     case S:
                         newY = (newY - 1 + maxY) % maxY;
-                       // startingPosition.setY(newY);
-                        //plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
                         break;
                     case W:
                         newX = (newX - 1 + maxX) % maxX;
-                        //startingPosition.setX(newX);
-                        //plateau.getPlateauSize()[startingPosition.getY()][startingPosition.getX()] = "/";
                         break;
                 }
 
