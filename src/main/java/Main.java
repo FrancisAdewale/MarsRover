@@ -26,13 +26,17 @@ public class Main {
                 Rover rover = new Rover(position,instructionList,plateau);
                 rover.traverse();
 
-                System.out.println("Do you want to enter another set of instructions? (yes/no): ");
+                System.out.println("Retsart? (yes/no): ");
                 String continueChoice = scanner.nextLine();
                 if (continueChoice.equalsIgnoreCase("no")) {
                     break;
                 }
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("Please add a space between inputs i.e 5 5");
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter digits for Width and Height");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Please enter a valid compass direction e.g. N, E, S, W");
             }
         }
 

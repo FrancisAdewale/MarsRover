@@ -46,7 +46,7 @@ public class InputParser {
         String[] splitInstructions = input.split("");
         List<Instruction> instructionList = new ArrayList<>(List.of());
         for(String i : splitInstructions) {
-            instructionList.add(Instruction.valueOf(i));
+            instructionList.add(Instruction.valueOf(i.toUpperCase()));
         }
         //System.out.println(instructionList);
         return instructionList;

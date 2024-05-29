@@ -47,19 +47,37 @@ public class Rover {
                 int maxY = plateau.getPlateauSize().length; //Y AXIS LENGTH
                 switch (startingPosition.getFacing()) {
                     case N:
-                        newY = (newY + 1) % maxY;
+                        if (newY + 1 >= maxY) {
+                            System.out.println("Cannot move north. Reached the northern edge of the plateau.");
+                        } else {
+                            newY += 1;
+                        }
                         break;
                     case E:
-                        newX = (newX + 1) % maxX;
+                        if (newX + 1 >= maxX) {
+                            System.out.println("Cannot move east. Reached the eastern edge of the plateau.");
+                        } else {
+                            newX += 1;
+                        }
 
                         break;
                     case S:
-                        newY = (newY - 1 + maxY) % maxY;
+                        if (newY - 1 < 0) {
+                            System.out.println("Cannot move south. Reached the southern edge of the plateau.");
+                        } else {
+                            newY -= 1;
+                        }
                         break;
                     case W:
-                        newX = (newX - 1 + maxX) % maxX;
+                        if (newX - 1 < 0) {
+                            System.out.println("Cannot move west. Reached the western edge of the plateau.");
+                        } else {
+                            newX -= 1;
+                        }
+                        //newX = (newX - 1 + maxX) % maxX;
                         break;
                 }
+
 
                 startingPosition.setX(newX);
                 startingPosition.setY(newY);
